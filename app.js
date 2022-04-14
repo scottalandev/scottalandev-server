@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+// ROUTERS
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -19,10 +22,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'react-build')));
+// app.use(express.static(path.join(__dirname, '/demos/drum-kit-extended/')));
+
+// demos routes
+app.use('/drum-kit-extended', express.static(path.join(__dirname, '/demos/drum-kit-extended/')));
 
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, 'react-build', 'index.html'));
 });
+
 
 app.use('/api', indexRouter);
 app.use('/users', usersRouter);

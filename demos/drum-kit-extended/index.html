@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/SAFavicon80px.png" />
+  </head>
+
+  <body>
+    <h1 id="title">Drum Kit</h1>
+    <h6>Click a button or press the indicated letter on your keyboard to play each drum sound.</h6>
+    <div class="set">
+      <button class="w drum">w</button>
+      <button class="a drum">a</button>
+      <button class="s drum">s</button>
+      <button class="d drum">d</button>
+      <button class="j drum">j</button>
+      <button class="k drum">k</button>
+      <button class="l drum">l</button>
+    </div>
+    <div class="bass-loop">
+      <h3>Bass Drum Loop</h3>
+      <p>Select a tempo and hold space bar to play a steady bass drum beat.</p>
+      <input id="tempoBpm" type="range" value="72" min="40" max="200" oninput="this.nextElementSibling.value = this.value" />
+      <output>72</output>
+      <br />
+      <button class="space loop hold">hold<br />space</button>
+    </div>
+
+    <footer>Based on a udemy course project by Angela Yu. Extended and customized by Scott Alan.</footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
